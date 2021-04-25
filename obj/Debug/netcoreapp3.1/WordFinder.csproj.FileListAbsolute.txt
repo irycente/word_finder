@@ -11,3 +11,6 @@ C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.csproj.CoreCompi
 C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.dll
 C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.pdb
 C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.genruntimeconfig.cache
+C:\DevProjects\QB\WordFinder\bin\Debug\netcoreapp3.1\Application.dll
+C:\DevProjects\QB\WordFinder\bin\Debug\netcoreapp3.1\Application.pdb
+C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.csproj.CopyComplete
