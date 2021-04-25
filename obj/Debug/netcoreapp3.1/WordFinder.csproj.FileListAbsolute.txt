@@ -1,0 +1,13 @@
+C:\DevProjects\QB\WordFinder\bin\Debug\netcoreapp3.1\WordFinder.exe
+C:\DevProjects\QB\WordFinder\bin\Debug\netcoreapp3.1\WordFinder.deps.json
+C:\DevProjects\QB\WordFinder\bin\Debug\netcoreapp3.1\WordFinder.runtimeconfig.json
+C:\DevProjects\QB\WordFinder\bin\Debug\netcoreapp3.1\WordFinder.runtimeconfig.dev.json
+C:\DevProjects\QB\WordFinder\bin\Debug\netcoreapp3.1\WordFinder.dll
+C:\DevProjects\QB\WordFinder\bin\Debug\netcoreapp3.1\WordFinder.pdb
+C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.csprojAssemblyReference.cache
+C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.AssemblyInfoInputs.cache
+C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.AssemblyInfo.cs
+C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.csproj.CoreCompileInputs.cache
+C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.dll
+C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.pdb
+C:\DevProjects\QB\WordFinder\obj\Debug\netcoreapp3.1\WordFinder.genruntimeconfig.cache
