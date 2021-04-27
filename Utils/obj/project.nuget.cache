@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wffocpY93nr3GBW95YW7q6RxMZWuYcRpaNrxbXU3hQ+U8NRcWAoIJu8lBh4RIBO1qUWiPMFC7t95SaCvw/Qa8A==",
+  "dgSpecHash": "yR8rzyH8pG8fPKhW1cmUShYd9Pn54N7gFL4Oqeyqpy4fbVP06xxV+nnxSJOJxwE+JuY9YxWJqSkqXGHQT1K+3Q==",
   "success": true,
-  "projectFilePath": "C:\\DevProjects\\QB\\WordFinder\\Application\\Application.csproj",
+  "projectFilePath": "C:\\DevProjects\\QB\\WordFinder\\Utils\\Utils.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\icenteno\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\icenteno\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

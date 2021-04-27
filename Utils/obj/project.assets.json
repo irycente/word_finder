@@ -25,16 +25,6 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "Utils/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Utils.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Utils.dll": {}
-        }
       }
     }
   },
@@ -182,17 +172,11 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "Utils/1.0.0": {
-      "type": "project",
-      "path": "../Utils/Utils.csproj",
-      "msbuildProject": "../Utils/Utils.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3",
-      "Utils >= 1.0.0"
+      "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -201,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DevProjects\\QB\\WordFinder\\Application\\Application.csproj",
-      "projectName": "Application",
-      "projectPath": "C:\\DevProjects\\QB\\WordFinder\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\DevProjects\\QB\\WordFinder\\Utils\\Utils.csproj",
+      "projectName": "Utils",
+      "projectPath": "C:\\DevProjects\\QB\\WordFinder\\Utils\\Utils.csproj",
       "packagesPath": "C:\\Users\\icenteno\\.nuget\\packages\\",
-      "outputPath": "C:\\DevProjects\\QB\\WordFinder\\Application\\obj\\",
+      "outputPath": "C:\\DevProjects\\QB\\WordFinder\\Utils\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\icenteno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -221,11 +205,7 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {
-            "C:\\DevProjects\\QB\\WordFinder\\Utils\\Utils.csproj": {
-              "projectPath": "C:\\DevProjects\\QB\\WordFinder\\Utils\\Utils.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

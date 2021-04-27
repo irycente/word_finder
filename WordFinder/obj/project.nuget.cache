@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gHbfxdI2tuEdROPh61x+KNAtkm5py49qbrkmfUKdDv1PFt9heiNH8gjlXGUifOygxS7qcAecJmV1S2vX50vFjw==",
+  "dgSpecHash": "xCxpkDATOAABv1VpdeUNPAUSj6uE+qSRkGce6tWJtC7KSkn6e/qUTqQMDyWC6dKlVWPH6Y3H3fSBAHiIlbfN7A==",
   "success": true,
-  "projectFilePath": "C:\\DevProjects\\QB\\WordFinder\\ConsoleApp.csproj",
+  "projectFilePath": "C:\\DevProjects\\QB\\WordFinder\\WordFinder\\ConsoleApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

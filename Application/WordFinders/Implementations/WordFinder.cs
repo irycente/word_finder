@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Utils.Extensions;
 
 namespace Application.WordFinders.Implementations
 {
@@ -70,9 +71,9 @@ namespace Application.WordFinders.Implementations
                 {
                     var listItem = list[i];
 
-                    var wordOccurrencesInItem = GetOccurrences(word, listItem);
+                    var wordOccurrencesInItem = listItem.GetOccurrencesOf(word);
 
-                    AddOrIncrement(occurrencesOfEachWordInList, word, wordOccurrencesInItem);                    
+                    occurrencesOfEachWordInList.AddOrIncrementExistent(word, wordOccurrencesInItem);                               
                 }
             }
         }
@@ -98,31 +99,12 @@ namespace Application.WordFinders.Implementations
             return columns;
         }
 
-        // TO-DO: Move to string extension methods
-        private int GetOccurrences(string searched, string source)
-        {
-            return source.Split(new string[] { searched }, StringSplitOptions.None).Length - 1;
-        }
-
-        // TO-DO: Move to Dictionary extension methods.
-        private void AddOrIncrement(IDictionary<string, int> dictionary, string key, int value)
-        {
-            try
-            {
-                dictionary.Add(key, value);
-            }
-            catch (ArgumentException)
-            {
-                dictionary[key] = value + dictionary[key];
-            }
-        }
-
         private IEnumerable<string> PrepareResults(IDictionary<string, int> wordsOccurrencesInMatrix)
         {
             return wordsOccurrencesInMatrix
                 .OrderByDescending(x => x.Value)
                 .Where(x => x.Value != 0)
-                //.Take(NUMBER_OF_RESULTS_TO_RETURN)
+                .Take(NUMBER_OF_RESULTS_TO_RETURN)
                 .Select(x => x.Key);
         }
     }

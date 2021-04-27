@@ -5,11 +5,24 @@
       "Application/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Utils": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Application.dll": {}
         },
         "runtime": {
           "bin/placeholder/Application.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utils.dll": {}
         }
       }
     }
@@ -19,6 +32,11 @@
       "type": "project",
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
+    },
+    "Utils/1.0.0": {
+      "type": "project",
+      "path": "../Utils/Utils.csproj",
+      "msbuildProject": "../Utils/Utils.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -32,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DevProjects\\QB\\WordFinder\\ConsoleApp.csproj",
+      "projectUniqueName": "C:\\DevProjects\\QB\\WordFinder\\WordFinder\\ConsoleApp.csproj",
       "projectName": "ConsoleApp",
-      "projectPath": "C:\\DevProjects\\QB\\WordFinder\\ConsoleApp.csproj",
+      "projectPath": "C:\\DevProjects\\QB\\WordFinder\\WordFinder\\ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\icenteno\\.nuget\\packages\\",
-      "outputPath": "C:\\DevProjects\\QB\\WordFinder\\obj\\",
+      "outputPath": "C:\\DevProjects\\QB\\WordFinder\\WordFinder\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\icenteno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +71,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\DevProjects\\QB\\Application\\Application.csproj": {
-              "projectPath": "C:\\DevProjects\\QB\\Application\\Application.csproj"
+            "C:\\DevProjects\\QB\\WordFinder\\Application\\Application.csproj": {
+              "projectPath": "C:\\DevProjects\\QB\\WordFinder\\Application\\Application.csproj"
             }
           }
         }
