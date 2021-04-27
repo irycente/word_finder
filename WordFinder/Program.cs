@@ -15,7 +15,9 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            // TO-DO: Implement file matrix provider using validator.
             IMatrixProvider matrixProvider = new MockedMatrixProvider();
+            // TO-DO: Implement file word stream provider.
             IWordStreamProvider wordStreamProvider = new MockedWordStreamProvider();            
             IListPrinter wordPrinter = new RankedListPrinter();
             IWordFinder wordFinder;

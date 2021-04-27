@@ -9,5 +9,12 @@ namespace Utils.Extensions
         {
             return  source.Select(x => x.ToLower());
         }
+
+        public static int GetLengthOfFirstElement(this IEnumerable<string> source)
+        {
+            var itemsInSource = source.Count();
+
+            return itemsInSource != 0 ? source.First().Length : 0;
+        }
     }
 }
