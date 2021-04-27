@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Domain.Model.Abstractions;
+using Domain.Model.Concretions;
 using Utils.Extensions;
 
 namespace Application.WordFinders.Implementations
@@ -9,102 +10,70 @@ namespace Application.WordFinders.Implementations
     {
         private const int NUMBER_OF_RESULTS_TO_RETURN = 10;
 
-        private readonly List<string> matrix;
-        private readonly int matrixLenght;
-        private readonly int matrixHeight;
+        private readonly IMatrix matrix;
 
         public WordFinder(IEnumerable<string> matrix)
         {
-            this.matrix = matrix
-                .Select(x => x.ToLower())
-                .ToList();
-
-            this.matrixHeight = matrix.Count();
-            this.matrixLenght = matrixHeight != 0 ? matrix.First().Length : 0; 
+            this.matrix = new HorizontalMatrix(matrix);
         }
 
         public IEnumerable<string> FindWords(IEnumerable<string> wordStream)
         {
-            var words = wordStream
-                .Select(x => x.ToLower())
-                .ToList();
+            var wordsOccurrences = GetWordsOccurrencesInMatrix(wordStream.ToList());
 
-            var wordsOccurrences = GetWordsOccurrencesInMatrix(words);
+            var words = GetWordsWithMostOccurrences(wordsOccurrences, NUMBER_OF_RESULTS_TO_RETURN);
 
-            var results = PrepareResults(wordsOccurrences);
-
-            return results;
+            return words;
         }
 
         private IDictionary<string, int> GetWordsOccurrencesInMatrix(IList<string> words)
         {
-            var wordsOccurrencesInMatrix = new Dictionary<string, int>();
+            var wordsOccurrences = new Dictionary<string, int>();
 
-            AddVerticalOccurrences(wordsOccurrencesInMatrix, words);
+            FindVerticalOccurrences(wordsOccurrences, words);
 
-            AddHorizontalOccurrences(wordsOccurrencesInMatrix, words);
+            FindHorizontalOccurrences(wordsOccurrences, words);
 
-            return wordsOccurrencesInMatrix;
+            return wordsOccurrences;
         } 
 
-        private void AddVerticalOccurrences(IDictionary<string, int> wordsOccurrencesInMatrix, IList<string> words)
+        private void FindVerticalOccurrences(IDictionary<string, int> wordsOccurrencesInMatrix, IList<string> words)
         {
-            var matrixColumns = GetMatrixColumns();
+            var matrixColumns = matrix.Columns;
 
-            AddOccurrences(words, matrixColumns, wordsOccurrencesInMatrix);
+            FindOccurrences(words, matrixColumns, wordsOccurrencesInMatrix);
         }
 
-        private void AddHorizontalOccurrences(IDictionary<string, int> wordsOccurrencesInMatrix, IList<string> words)
+        private void FindHorizontalOccurrences(IDictionary<string, int> wordsOccurrencesInMatrix, IList<string> words)
         {
-            // The matrix is already presented as a set of rows.
+            var matrixRows = matrix.Rows;
 
-            AddOccurrences(words, matrix, wordsOccurrencesInMatrix);
+            FindOccurrences(words, matrixRows, wordsOccurrencesInMatrix);
         }
 
-        private void AddOccurrences(IList<string> words, IList<string> list, IDictionary<string, int> occurrencesOfEachWordInList)
+        private void FindOccurrences(IList<string> words, IList<string> source, IDictionary<string, int> wordsOccurrences)
         {
-            var listSize = list.Count;
+            var sourceLength = source.Count;
 
             foreach(var word in words)
             {
-                for(int i = 0; i < listSize; i++)
+                for(int i = 0; i < sourceLength; i++)
                 {
-                    var listItem = list[i];
+                    var sourceItem = source[i];
 
-                    var wordOccurrencesInItem = listItem.GetOccurrencesOf(word);
+                    var wordOccurrencesInItem = sourceItem.GetOccurrencesOf(word);
 
-                    occurrencesOfEachWordInList.AddOrIncrementExistent(word, wordOccurrencesInItem);                               
+                    wordsOccurrences.AddOrIncrementExistent(word, wordOccurrencesInItem);                               
                 }
             }
         }
 
-        private IList<string> GetMatrixColumns()
-        {
-            var columns = new List<string>();
-
-            for(int x = 0; x < matrixLenght; x++)
-            {
-                var column = string.Empty;
-
-                for(int y = 0; y < matrixHeight; y++)
-                {
-                    var cell = matrix[y][x];
-
-                    column += cell;
-                }
-
-                columns.Add(column);
-            }
-
-            return columns;
-        }
-
-        private IEnumerable<string> PrepareResults(IDictionary<string, int> wordsOccurrencesInMatrix)
+        private IEnumerable<string> GetWordsWithMostOccurrences(IDictionary<string, int> wordsOccurrencesInMatrix, int requiredResults)
         {
             return wordsOccurrencesInMatrix
                 .OrderByDescending(x => x.Value)
                 .Where(x => x.Value != 0)
-                .Take(NUMBER_OF_RESULTS_TO_RETURN)
+                .Take(requiredResults)
                 .Select(x => x.Key);
         }
     }

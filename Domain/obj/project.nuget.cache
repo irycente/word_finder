@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "1jnzCrRR5o1UNTGNePthYYYvQnGgoriqZ/QMm2FYXiCfDUn/GcneDSsV7RErVL92lT2pi+FATO+UjRvFmx5Y4A==",
+  "success": true,
+  "projectFilePath": "C:\\DevProjects\\QB\\WordFinder\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\icenteno\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\icenteno\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

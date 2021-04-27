@@ -7,3 +7,17 @@ C:\DevProjects\QB\Application\obj\Debug\netstandard2.0\Application.AssemblyInfo.
 C:\DevProjects\QB\Application\obj\Debug\netstandard2.0\Application.csproj.CoreCompileInputs.cache
 C:\DevProjects\QB\Application\obj\Debug\netstandard2.0\Application.dll
 C:\DevProjects\QB\Application\obj\Debug\netstandard2.0\Application.pdb
+C:\DevProjects\QB\WordFinder\Application\bin\Debug\netstandard2.0\Application.deps.json
+C:\DevProjects\QB\WordFinder\Application\bin\Debug\netstandard2.0\Application.dll
+C:\DevProjects\QB\WordFinder\Application\bin\Debug\netstandard2.0\Application.pdb
+C:\DevProjects\QB\WordFinder\Application\bin\Debug\netstandard2.0\Domain.dll
+C:\DevProjects\QB\WordFinder\Application\bin\Debug\netstandard2.0\Utils.dll
+C:\DevProjects\QB\WordFinder\Application\bin\Debug\netstandard2.0\Domain.pdb
+C:\DevProjects\QB\WordFinder\Application\bin\Debug\netstandard2.0\Utils.pdb
+C:\DevProjects\QB\WordFinder\Application\obj\Debug\netstandard2.0\Application.csprojAssemblyReference.cache
+C:\DevProjects\QB\WordFinder\Application\obj\Debug\netstandard2.0\Application.AssemblyInfoInputs.cache
+C:\DevProjects\QB\WordFinder\Application\obj\Debug\netstandard2.0\Application.AssemblyInfo.cs
+C:\DevProjects\QB\WordFinder\Application\obj\Debug\netstandard2.0\Application.csproj.CoreCompileInputs.cache
+C:\DevProjects\QB\WordFinder\Application\obj\Debug\netstandard2.0\Application.csproj.CopyComplete
+C:\DevProjects\QB\WordFinder\Application\obj\Debug\netstandard2.0\Application.dll
+C:\DevProjects\QB\WordFinder\Application\obj\Debug\netstandard2.0\Application.pdb

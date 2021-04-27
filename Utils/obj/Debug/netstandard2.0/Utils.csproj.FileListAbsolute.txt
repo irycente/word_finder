@@ -1,0 +1,9 @@
+C:\DevProjects\QB\WordFinder\Utils\bin\Debug\netstandard2.0\Utils.deps.json
+C:\DevProjects\QB\WordFinder\Utils\bin\Debug\netstandard2.0\Utils.dll
+C:\DevProjects\QB\WordFinder\Utils\bin\Debug\netstandard2.0\Utils.pdb
+C:\DevProjects\QB\WordFinder\Utils\obj\Debug\netstandard2.0\Utils.csprojAssemblyReference.cache
+C:\DevProjects\QB\WordFinder\Utils\obj\Debug\netstandard2.0\Utils.AssemblyInfoInputs.cache
+C:\DevProjects\QB\WordFinder\Utils\obj\Debug\netstandard2.0\Utils.AssemblyInfo.cs
+C:\DevProjects\QB\WordFinder\Utils\obj\Debug\netstandard2.0\Utils.csproj.CoreCompileInputs.cache
+C:\DevProjects\QB\WordFinder\Utils\obj\Debug\netstandard2.0\Utils.dll
+C:\DevProjects\QB\WordFinder\Utils\obj\Debug\netstandard2.0\Utils.pdb

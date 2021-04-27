@@ -26,6 +26,16 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
       "Utils/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -183,6 +193,11 @@
         "netstandard.library.nuspec"
       ]
     },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
     "Utils/1.0.0": {
       "type": "project",
       "path": "../Utils/Utils.csproj",
@@ -191,6 +206,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Domain >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "Utils >= 1.0.0"
     ]
@@ -222,6 +238,9 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+            "C:\\DevProjects\\QB\\WordFinder\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\DevProjects\\QB\\WordFinder\\Domain\\Domain.csproj"
+            },
             "C:\\DevProjects\\QB\\WordFinder\\Utils\\Utils.csproj": {
               "projectPath": "C:\\DevProjects\\QB\\WordFinder\\Utils\\Utils.csproj"
             }

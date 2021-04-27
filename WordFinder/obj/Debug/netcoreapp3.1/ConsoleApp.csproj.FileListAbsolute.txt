@@ -30,3 +30,7 @@ C:\DevProjects\QB\WordFinder\WordFinder\obj\Debug\netcoreapp3.1\ConsoleApp.cspro
 C:\DevProjects\QB\WordFinder\WordFinder\obj\Debug\netcoreapp3.1\ConsoleApp.dll
 C:\DevProjects\QB\WordFinder\WordFinder\obj\Debug\netcoreapp3.1\ConsoleApp.pdb
 C:\DevProjects\QB\WordFinder\WordFinder\obj\Debug\netcoreapp3.1\ConsoleApp.genruntimeconfig.cache
+C:\DevProjects\QB\WordFinder\WordFinder\bin\Debug\netcoreapp3.1\Domain.dll
+C:\DevProjects\QB\WordFinder\WordFinder\bin\Debug\netcoreapp3.1\Utils.dll
+C:\DevProjects\QB\WordFinder\WordFinder\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\DevProjects\QB\WordFinder\WordFinder\bin\Debug\netcoreapp3.1\Utils.pdb
