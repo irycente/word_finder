@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Domain.Exceptions;
 using Domain.Model.Abstractions;
 using Domain.Model.Concretions;
 using Utils.Extensions;
@@ -22,6 +23,11 @@ namespace Application.WordFinders.Implementations
             var wordsOccurrences = GetWordsOccurrencesInMatrix(wordStream.ToList());
 
             var words = GetWordsWithMostOccurrences(wordsOccurrences, NUMBER_OF_RESULTS_TO_RETURN);
+
+            if(words.Count() == 0)
+            {
+                throw new NoMatchesException();
+            }
 
             return words;
         }

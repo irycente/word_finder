@@ -2,8 +2,8 @@
 
 namespace Application.Validators.MatrixValidators
 {
-    public interface IMatrixValidator
+    public interface IMatrixValidator : IValidator<ICollection<string>>
     {
-        void Validate(ICollection<string> matrix);
+
     }
 }

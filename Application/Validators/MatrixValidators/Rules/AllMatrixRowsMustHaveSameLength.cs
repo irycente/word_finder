@@ -23,7 +23,7 @@ namespace Application.Validators.MatrixValidators.Rules
         {
             var allRowsHaveSameLength = rows.All(x => x.Length == lengthOfFirstRow);
 
-            if(allRowsHaveSameLength)
+            if(!allRowsHaveSameLength)
             {
                 throw new InvalidMatrixException(ErrorMessage);
             }

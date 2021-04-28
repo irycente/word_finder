@@ -7,3 +7,6 @@ C:\DevProjects\QB\WordFinder\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfo
 C:\DevProjects\QB\WordFinder\Domain\obj\Debug\netstandard2.0\Domain.csproj.CoreCompileInputs.cache
 C:\DevProjects\QB\WordFinder\Domain\obj\Debug\netstandard2.0\Domain.dll
 C:\DevProjects\QB\WordFinder\Domain\obj\Debug\netstandard2.0\Domain.pdb
+C:\DevProjects\QB\WordFinder\Domain\bin\Debug\netstandard2.0\Utils.dll
+C:\DevProjects\QB\WordFinder\Domain\bin\Debug\netstandard2.0\Utils.pdb
+C:\DevProjects\QB\WordFinder\Domain\obj\Debug\netstandard2.0\Domain.csproj.CopyComplete

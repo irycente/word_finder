@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Application.MatrixProviders;
 using Application.MatrixProviders.Implementations;
 using Application.WordFinders;
 using Application.WordFinders.Implementations;
@@ -8,6 +8,8 @@ using Application.WordStreamProviders;
 using Application.WordStreamProviders.Implementations;
 using ConsoleApp.Helpers.Printers.ListPrinters;
 using ConsoleApp.Helpers.Printers.ListPrinters.Implementations;
+using ConsoleApp.Helpers.Requesters.Implementations;
+using Domain.Exceptions;
 
 namespace ConsoleApp
 {
@@ -15,24 +17,34 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            // TO-DO: Implement file matrix provider using validator.
-            IMatrixProvider matrixProvider = new MockedMatrixProvider();
-            // TO-DO: Implement file word stream provider.
-            IWordStreamProvider wordStreamProvider = new MockedWordStreamProvider();            
-            IListPrinter wordPrinter = new RankedListPrinter();
-            IWordFinder wordFinder;
+            // TO-DO: Configure DI.  
 
-            IEnumerable<string> matrix;
-            IEnumerable<string> wordStream;
-            IEnumerable<string> foundWords;
+            try
+            {
+                var matrixFilePath = new MatrixFilePathRequester().Request();
+                var matrix = new FileHorizontalMatrixProvider(matrixFilePath).GetValidMatrix();
 
-            matrix = matrixProvider.GetValidMatrix();
-            wordStream = wordStreamProvider.GetValidWordStream();
+                var wordStreamFilePath = new WordStreamFilePathRequester().Request();
+                var wordStream = new FileWordStreamProvider(wordStreamFilePath).GetValidWordStream();
 
-            wordFinder = new WordFinder(matrix);
-            foundWords = wordFinder.FindWords(wordStream);
+                try
+                {
+                    var words = new WordFinder(matrix).FindWords(wordStream).ToList();
 
-            wordPrinter.PrintList(foundWords.ToList());
+                    new RankedListPrinter().PrintList(words);
+                }
+                catch (NoMatchesException ex)
+                {
+                    Console.WriteLine(ex.Message);                    
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                var errorMessage = $"ERROR! \n \n {ex.Message}";
+
+                Console.WriteLine(errorMessage);                
+            }
         }
     }
 }

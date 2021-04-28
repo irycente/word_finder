@@ -1,33 +1,28 @@
 ﻿using Domain.Exceptions;
+using Domain.ValueObjects;
 
 namespace Application.Validators.MatrixValidators.Rules
 {
     public class MatrixMustNotExceedSize : IRule
     {
-        private readonly int maxLength;
-        private readonly int maxHeight;
-        private readonly int actualLength;
-        private readonly int actualHeight;
+        private readonly MatrixSize maxMatrixSize;
+        private readonly MatrixSize matrixSize;
 
         public MatrixMustNotExceedSize(
-            int maxLength, 
-            int maxHeight, 
-            int actualLength, 
-            int actualHeight)
+            MatrixSize maxMatrixSize, 
+            MatrixSize matrixSize)
         {
-            this.maxLength = maxLength;
-            this.maxHeight = maxHeight;
-            this.actualLength = actualLength;
-            this.actualHeight = actualHeight;
+            this.maxMatrixSize = maxMatrixSize;
+            this.matrixSize = matrixSize;
         }
 
         public string ErrorMessage => "Matrix must not exceed a size of {0}x{1}";
 
         public void Validate()
         {
-            if(!IsValidHeight() || !IsValidHeight())
+            if(!IsValidHeight() || !IsValidLength())
             {
-                var errorMessage = string.Format(ErrorMessage, maxHeight, maxLength);
+                var errorMessage = string.Format(ErrorMessage, maxMatrixSize.Height, maxMatrixSize.Length);
 
                 throw new InvalidMatrixException(errorMessage);
             }
@@ -35,12 +30,12 @@ namespace Application.Validators.MatrixValidators.Rules
 
         private bool IsValidLength()
         {
-            return actualLength <= maxLength;
+            return matrixSize.Length <= maxMatrixSize.Length;
         }
 
         private bool IsValidHeight()
         {
-            return actualHeight <= maxHeight;
+            return matrixSize.Height <= maxMatrixSize.Height;
         }
     }
 }

@@ -1,31 +1,33 @@
 ﻿using System.Collections.Generic;
 using Application.Validators.MatrixValidators.Rules;
 using Domain.Constants;
+using Domain.ValueObjects;
 using Utils.Extensions;
 
 namespace Application.Validators.MatrixValidators.Implementations
 {
     public class HorizontalMatrixValidator : IMatrixValidator
     {
-        private readonly ICollection<IRule> rules;
-
-        // TO-DO: Create value object for matrix size.
-        public HorizontalMatrixValidator(ICollection<string> matrixRows)
+        public HorizontalMatrixValidator(ICollection<string> matrix)
         {
-            var length = matrixRows.GetLengthOfFirstElement();
-            var height = matrixRows.Count;
-
-            rules = new List<IRule>
+            var matrixSize = new MatrixSize(matrix);
+            var maxMatrixSize = new MatrixSize(MatrixConstants.MATRIX_MAX_HEIGHT, MatrixConstants.MATRIX_MAX_LENGTH);
+            
+            Entity = matrix;
+            Rules = new List<IRule>
             {
-                new AllMatrixRowsMustHaveSameLength(matrixRows, length),
-                new MatrixMustNotExceedSize(MatrixConstants.MATRIX_MAX_LENGTH, MatrixConstants.MATRIX_MAX_HEIGHT, length, height)
+                new AllMatrixRowsMustHaveSameLength(matrix, matrixSize.Length),
+                new MatrixMustNotExceedSize(maxMatrixSize, matrixSize)
             };
-
         }
 
-        public void Validate(ICollection<string> matrix)
+        public ICollection<string> Entity { get; }
+
+        public ICollection<IRule> Rules { get; }
+
+        public void Validate()
         {
-            foreach(var rule in rules)
+            foreach(var rule in Rules)
             {
                 rule.Validate();
             }           

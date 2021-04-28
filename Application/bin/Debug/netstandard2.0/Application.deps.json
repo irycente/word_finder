@@ -24,6 +24,9 @@
         }
       },
       "Domain/1.0.0": {
+        "dependencies": {
+          "Utils": "1.0.0"
+        },
         "runtime": {
           "Domain.dll": {}
         }
